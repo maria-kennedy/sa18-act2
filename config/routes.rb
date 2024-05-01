@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root to: redirect('products')
   get 'products/index'
   get 'products/show'
 
-  get 'products', to: 'products#index'
+  get 'products', to: 'products#index', as: 'products'
   get 'products/:id', to: 'products#show', as: 'product'
 
 end
